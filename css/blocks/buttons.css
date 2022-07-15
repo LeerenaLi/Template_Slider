@@ -1,0 +1,47 @@
+.buttons {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid var(--main-color, #15A9CB);
+    outline: none;
+    background: var(--main-color, #15A9CB);
+    box-shadow: 0px 4px 25px var(--shadow-color, rgba(21, 169, 203, 0.3));
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.buttons:hover {
+    background: #fff;
+    color: var(--main-color, #15A9CB);
+    border: 1px solid var(--main-color, #15A9CB);
+}
+
+.present__btn {
+    padding: 11px 48px;
+}
+
+.questions__submit {
+    padding: 11px 38px;
+}
+
+@media (max-width: 1200px) {
+    .present__btn {
+        padding: 10px 49px;
+    }
+}
+
+@media (max-width: 440px) {
+    .present__btn {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 9px 38px;
+    }
+    .questions__submit {
+        padding: 10px 26px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+}

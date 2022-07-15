@@ -1,0 +1,164 @@
+.slider {
+    position: relative;
+    max-width: 290px;
+    margin: 0 auto;
+    display: none;
+}
+
+.slider__wrapper {
+    counter-reset: count 0;
+    display: flex;
+    justify-content: center;
+    min-height: 216px;
+    position: relative;
+}
+
+.slider__item {
+    position: absolute;
+    max-width: 166px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    z-index: 0;
+}
+
+.slider__item::after {
+    content: counter(count);
+    position: absolute;
+    top: 16px;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 73px;
+    counter-increment: count;
+}
+
+.slider__img {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 26px;
+    background: var(--main-color, #23C7EC);
+    border-radius: 100%;
+}
+
+.slider__descr {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--dark-text-color, #383A4C);
+}
+
+.slider input {
+    display: none;
+}
+
+.slider__next-control {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.slider__label {
+    display: none;
+    float: right;
+    width: 38px;
+    height: 38px;
+    background: rgba(75, 77, 98, 0.72);
+    box-shadow: 4px 4px 25px rgba(0, 210, 248, 0.05);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider__label:hover {
+    opacity: 0.5;
+}
+
+#slide1:checked~.slider__next-control .slider__label:nth-child(2),
+#slide2:checked~.slider__next-control .slider__label:nth-child(3),
+#slide3:checked~.slider__next-control .slider__label:nth-child(4) {
+    display: block;
+    float: right;
+    background: rgba(75, 77, 98, 0.72);
+    box-shadow: 4px 4px 25px rgba(0, 210, 248, 0.05);
+}
+
+#slide4:checked~.slider__next-control .slider__label:nth-child(1) {
+    display: block;
+    float: right;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.05);
+}
+ 
+#slide1:checked~.slider__next-control .slider__label:nth-child(4) {  
+    display: block;
+    float: left;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+#slide2:checked~.slider__next-control .slider__label:nth-child(1),
+#slide3:checked~.slider__next-control .slider__label:nth-child(2),
+#slide4:checked~.slider__next-control .slider__label:nth-child(3) {
+    display: block;
+    float: left;
+    background: rgba(75, 77, 98, 0.72);
+    box-shadow: 4px 4px 25px rgba(0, 210, 248, 0.05);
+}
+
+#slide1:checked~.slider__next-control .slider__label:nth-child(4)::after {
+    content: url("../../icons/Arrow_left.png");
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 13px;
+}
+
+#slide2:checked~.slider__next-control .slider__label:nth-child(1)::after,
+#slide3:checked~.slider__next-control .slider__label:nth-child(2)::after,
+#slide4:checked~.slider__next-control .slider__label:nth-child(3)::after {
+    content: url("../../icons/Arrow_right.png");
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 13px;
+    transform: rotate(180deg);
+}
+
+#slide1:checked~.slider__next-control .slider__label:nth-child(2)::after,
+#slide2:checked~.slider__next-control .slider__label:nth-child(3)::after,
+#slide3:checked~.slider__next-control .slider__label:nth-child(4)::after {
+    content: url("../../icons/Arrow_right.png");
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 16px;
+}
+
+#slide4:checked~.slider__next-control .slider__label:nth-child(1)::after {
+    content: url("../../icons/Arrow_left.png");
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 16px;
+    transform: rotate(180deg);
+}
+
+#slide1:checked~.slider__wrapper .slider__item:nth-child(1),
+#slide2:checked~.slider__wrapper .slider__item:nth-child(2),
+#slide3:checked~.slider__wrapper .slider__item:nth-child(3),
+#slide4:checked~.slider__wrapper .slider__item:nth-child(4),
+#slide5:checked~.slider__wrapper .slider__item:nth-child(5) {
+    opacity: 1;
+}
+
+
+@media (max-width: 440px) {
+    .slider {
+        display: block;
+    }
+}
+

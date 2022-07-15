@@ -1,0 +1,112 @@
+html {
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;  /* плавная прокрутка внутри документа по якорям */
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: 'Roboto', 'Arial', 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, p, figure, fieldset {
+    margin: 0;
+}
+
+.container {
+    max-width: 1260px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.page {
+    background: url("../img/Background.jpg") no-repeat;
+    background-size: 1600px auto;
+    background-position: top center;
+    padding-top: 40px;
+}
+
+@media (max-width: 1200px) {
+    .page {
+        background-size: 1200px auto;
+        background-position: top center;
+        padding-top: 26px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page {
+        background: url("../img/Background_media.jpg") no-repeat;
+        background-size: 1024px auto;
+        background-position: top center;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        background-size: 940px auto;
+        background-position: top left;
+    }
+}
+
+@media (max-width: 440px) {
+    .page {
+        background-size: 800px auto;
+        background-position: top left;
+        padding-top: 15px;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .page {
+        background: url("../img/Background_small.jpg") no-repeat;
+        background-size: 320px auto;
+    }
+}
+
+
